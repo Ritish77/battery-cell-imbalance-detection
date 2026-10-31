@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battery Cell Imbalance Detection</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">BATTERY MONITORING SYSTEM</p>
+      <h1>Battery Cell Imbalance Detection</h1>
+      <p class="subtitle">A software dashboard for four-cell voltage, temperature and protection-state monitoring.</p>
+      <span id="status" class="badge normal">NORMAL</span>
+    </header>
+    <section class="grid" aria-label="Battery measurements">
+      <article class="card"><span>Cell 1</span><strong id="cell1">4.120 V</strong></article>
+      <article class="card"><span>Cell 2</span><strong id="cell2">4.110 V</strong></article>
+      <article class="card"><span>Cell 3</span><strong id="cell3">4.090 V</strong></article>
+      <article class="card"><span>Cell 4</span><strong id="cell4">4.100 V</strong></article>
+      <article class="card wide"><span>Voltage imbalance</span><strong id="imbalance">0.030 V</strong><small>Critical above 0.20 V</small></article>
+      <article class="card wide"><span>Average temperature</span><strong id="temperature">30.8 C</strong><small>Warning above 38 C</small></article>
+    </section>
+    <section class="panel">
+      <h2>Protection outputs</h2>
+      <div class="outputs"><span>Relay <b id="relay">ON</b></span><span>Fan <b id="fan">OFF</b></span><span>Buzzer <b id="buzzer">OFF</b></span><span>LED <b id="led">GREEN</b></span></div>
+    </section>
+    <footer>Prototype dashboard. Connect a read-only telemetry API for live InfluxDB data.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

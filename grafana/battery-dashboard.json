@@ -1,0 +1,12 @@
+{
+  "annotations": {"list": []},
+  "editable": true,
+  "panels": [
+    {"type": "stat", "title": "Voltage Imbalance", "targets": [{"query": "from(bucket: \"battery_monitor\") |> range(start: -15m) |> filter(fn: (r) => r._field == \"voltage_imbalance\")"}]},
+    {"type": "timeseries", "title": "Cell Voltages", "targets": [{"query": "from(bucket: \"battery_monitor\") |> range(start: -1h) |> filter(fn: (r) => r._field =~ /cell[1-4]_voltage/)"}]},
+    {"type": "timeseries", "title": "Cell Temperatures", "targets": [{"query": "from(bucket: \"battery_monitor\") |> range(start: -1h) |> filter(fn: (r) => r._field =~ /cell[1-4]_temperature/)"}]}
+  ],
+  "schemaVersion": 39,
+  "title": "Battery Cell Imbalance Detection",
+  "timezone": "browser"
+}
